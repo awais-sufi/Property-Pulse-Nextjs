@@ -1,7 +1,15 @@
+import Hero from "@/components/Hero";
+import HomeProperties from "@/components/HomeProperties";
+import InfoBoxes from "@/components/InfoBoxes";
+import FeaturedProperty from "@/components/FeaturedProperty";
+
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-lime-600">
-      Home Page
-    </div>
+    <>
+      <Hero />
+      <InfoBoxes />
+      <FeaturedProperty />
+      <HomeProperties />
+    </>
   );
 }

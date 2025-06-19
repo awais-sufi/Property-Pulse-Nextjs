@@ -1,5 +1,11 @@
+import Footer from "@/components/Footer";
 import "./globals.css";
-
+import Navbar from "@/components/Navbar";
+import AuthProvider from "@/components/AuthProvider";
+import { GlobalProvider } from "@/context/GlobalContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "photoswipe/dist/photoswipe.css";
 export const metadata = {
   title: "Property Pulse",
   keywords: "Rentals, Real Estate, Property Management",
@@ -9,8 +15,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <AuthProvider>
+      <GlobalProvider>
+        <html lang="en">
+          <body>
+            <Navbar />
+            {children}
+            <Footer />
+            <ToastContainer />
+          </body>
+        </html>
+      </GlobalProvider>
+    </AuthProvider>
   );
 }
